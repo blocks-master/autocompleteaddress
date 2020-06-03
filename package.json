@@ -1,0 +1,26 @@
+{
+	"name": "address-auto-complete",
+	"version": "1.0.0",
+	"description": "",
+	"main": "auto-complete.js",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/solodev/address-auto-complete.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/solodev/address-auto-complete/issues"
+	},
+	"homepage": "https://github.com/solodev/address-auto-complete#readme",
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	},
+	"dependencies": {
+		"ejs": "^3.1.3",
+		"express": "^4.17.1"
+	}
+}
