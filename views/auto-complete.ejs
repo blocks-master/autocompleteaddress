@@ -7,13 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<style>
-		/* Set the size of the div element that contains the map */
-		#map {
-		  height: 400px;  /* The height is 400 pixels */
-		  width: 100%;  /* The width is the width of the web page */
-		 }
-	  </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	
@@ -26,7 +19,7 @@
 <body>
 
 <div class="container">
-	<form>
+	<form action="/" method="POST">
 	<div class="card border-primary mt-3">
 		<div class="card-header text-white bg-primary">
 			<h3 class="card-title">Information</h3>
@@ -36,7 +29,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<label class="control-label">First Name</label>
-					<input class="form-control" id="first-name">
+					<input class="form-control" name="firstName" id="first-name">
 				</div>
 				<div class="col-md-6">
 					<label class="control-label">Last Name</label>
@@ -81,12 +74,18 @@
 				<div class="row">
 					<div class="container">
 						<label class="control-label">Credit Card Number</label>
-						<input placeholder="Enter your card number" class="form-control" id="credit-card">
-					 </div>
+						<input autofocus placeholder="Enter your card number" name="credit" class="form-control" id="credit-card">
+						<% if (creditError) { %>
+						<span id="credit-error" style="color:red"><%= creditError %></span>
+						<% } %>
+						<% if (!creditError) { %>
+							<span id="credit-success" style="color:green">Successful!</span>
+						<% } %>
+					</div>
 				</div>
 		   </div>
 		   <br>
-		   <a href="#" type="submit" class="btn btn-primary">Submit</a>
+		   <button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 	</div>
 	</form>
